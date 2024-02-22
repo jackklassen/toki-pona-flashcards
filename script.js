@@ -1,7 +1,7 @@
 
-window.onload = function(){
+/* window.onload = function(){
     fillmenu(words);
-};
+}; */
 
 function fillmenu(){
     //for all elements in list x call the DOM to put a button with an id that matches the location of element in the list to the html menu.
@@ -51,6 +51,27 @@ function setwordcard(i, words, descriptions,imgs){
 
 }
 
+/*
+A function to flip the card when the user clicks on it.
+takes index of the word its currently on as well as words descriptiosn and imgs as int inputs.
+*/
+function flipflashcard(word_index,words, descriptions,imgs){
+    let card_top_mid = document.getElementById("top_mid");
+    let card_bot_right_picture = document.getElementById("bot_right_picture");
+    let card_bot_left = document.getElementById("bot_left");
+    let card_bot_mid = document.getElementById("bot_mid");
+
+    card_bot_mid.textContent = "";
+    card_top_mid.textContent = words[word_index];
+    card_bot_left.textContent = descriptions[word_index];
+
+    card_bot_right_picture.setAttribute("src", "img/" + imgs[word_index]);
+    card_bot_right_picture.setAttribute("width", "304");
+    card_bot_right_picture.setAttribute("height", "228");
+    card_bot_right_picture.setAttribute("alt", words[i]);
+}
+
+
 const words = [
     "a","akesi","ala","alasa","ale, ali","anpa",
     "ante","anu","awen","e","en","esun","ijo",
@@ -84,12 +105,21 @@ const descriptions = [
 "modifier	dirty, gross, filthy | noun dirt, pollution, garbage, filth | verb pollute, dirty | interjective ew! yuck![yucky]",
 "noun person, people, human, being, somebody, anybody | modifier human, somebody's, personal, of people | verb	personify, humanize, personalize",
 "modifier yellow, light green [yellow]","verb have, contain | noun having | compounded with kama receive, get, take, obtain",
-/*start from the k's */"","","","",""
+"noun fish, sea creature","noun	sound, noise, voice | verb make noise, sound, ring, play (an instrument)","verb	come, become, arrive, happen, pursue actions to arrive to (a certain state), manage to, start to | noun	event, happening, chance, arrival, beginning | modifer	coming, future | verb bring about, summon[come up]",
+"noun plant, leaf, herb, tree, wood","verb can, is able to, is allowed to, may, is possible | noun: possibility, ability, power to do things, permission | verb: make possible, enable, allow, permit | context when used before la: it is possible that",
+"verb: use | preposition: with","noun: fruit, vegetable, mushroom","modifier: also, too, even, indeed (emphasizes the word(s) before it)","noun: part, partition | verb: split, cut, divide",
+"modifier: hard, solid, stone-like, made of stone or metal | noun: hard thing, rock, stone, metal, mineral, clay","noun: semi-solid or squishy substance, e.g. paste, powder, gum",
+"noun: air, wind, smell, soul | modifier: air-like, ethereal, gaseous","noun: colour, paint | modifier: colourful verb: colour, paint","noun: group, community, society, company, people | modifier: communal, shared, public, of the society [group]",
+"verb: listen, hear | modifier: auditory, hearing" /* do the L's next */
 ];
 
 const imgs = [
 "A_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Akesi_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ala_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
 "Alasa_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ale_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg", "Anpa_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
-"Ante_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Anu_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Awen_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg"
+"Ante_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Anu_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Awen_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"E_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","En_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Epiku_-_sitelen_pona_tan_lipu_pu_pi_toki_Epelanto.png","Esun_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Ijo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ike_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ilo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Insa_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Jaki_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Jan_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Jelo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Jo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"","","","","",""
 
 ];
