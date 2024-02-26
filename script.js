@@ -28,7 +28,7 @@ i = id
 */
 
 function callsetwordcard(i){
-    setwordcard(i, words,descriptions,imgs);
+    setwordcard(i);
 }
 
 
@@ -37,7 +37,7 @@ i = index or id for the button
 words = the array of words
 descriptions = array of descriptions.
 */
-function setwordcard(i, words, descriptions,imgs){ 
+function setwordcard(i){ 
    let w = document.getElementById("word");
    let d = document.getElementById("description");
    let p =  document.getElementById("picture");
@@ -55,7 +55,7 @@ function setwordcard(i, words, descriptions,imgs){
 A function to flip the card when the user clicks on it.
 takes index of the word its currently on as well as words descriptiosn and imgs as int inputs.
 */
-function flipflashcard(word_index,words, descriptions,imgs){
+function flipflashcard(word_index){
     let card_top_mid = document.getElementById("top_mid");
     let card_bot_right_picture = document.getElementById("bot_right_picture");
     let card_bot_left = document.getElementById("bot_left");
@@ -69,6 +69,50 @@ function flipflashcard(word_index,words, descriptions,imgs){
     card_bot_right_picture.setAttribute("width", "304");
     card_bot_right_picture.setAttribute("height", "228");
     card_bot_right_picture.setAttribute("alt", words[i]);
+}
+
+function checkflashcard(){
+    let flashcard = document.getElementById("flashcard");
+    let CurrWord = flashcard.getAttribute("data-CurrWord");
+    let CurrWordIndex = words.indexOf(CurrWord);
+    let Isflipped = flashcard.getAttribute("data-IsFlipped");
+
+
+    if(Isflipped == "false"){
+        flipflashcard(CurrWordIndex);
+    }
+    else{
+        nextcard(CurrWordIndex);
+    }
+
+}
+
+function nextcard(CurrCardIndex){
+    let flashcard = document.getElementById("flashcard");
+    let CurrLessonIndex =  flashcard.getAttribute("data-CurrLesson")
+    let lesson = lessons[CurrLessonIndex];
+    let newcard = getanewcard(lesson, CurrCardIndex);
+
+    setcard(newcard);
+}
+
+function setcard(flashcard){
+    let flashcard = document.getElementById("flashcard");
+    let 
+}
+
+
+/*
+set newcard's word to the same as current card 
+then loop getting a random card until the new card and the current card are different.
+then return the current card 
+*/
+function getanewcard(lesson, CurrCardIndex){ 
+    let newcard = CurrCardIndex;
+    while(newcard == CurrCardIndex){
+        newcard  = lesson[Math.floor(Math.random * lesson.length)];
+    }
+    return newcard;
 }
 
 
@@ -122,4 +166,8 @@ const imgs = [
 "Jaki_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Jan_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Jelo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Jo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
 "","","","","",""
 
+];
+
+const lessons = [
+[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8]
 ];
