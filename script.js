@@ -71,6 +71,8 @@ function flipflashcard(word_index){
     card_bot_right_picture.setAttribute("alt", words[i]);
 }
 
+
+
 function checkflashcard(){
     let flashcard = document.getElementById("flashcard");
     let CurrWord = flashcard.getAttribute("data-CurrWord");
@@ -86,19 +88,34 @@ function checkflashcard(){
     }
 
 }
+/*
+given the current card displayed by the flashcard find a new word to display then call the setcard function to display it.
 
+*/
 function nextcard(CurrCardIndex){
     let flashcard = document.getElementById("flashcard");
     let CurrLessonIndex =  flashcard.getAttribute("data-CurrLesson")
     let lesson = lessons[CurrLessonIndex];
     let newcard = getanewcard(lesson, CurrCardIndex);
-
     setcard(newcard);
 }
 
-function setcard(flashcard){
-    let flashcard = document.getElementById("flashcard");
-    let 
+
+/*
+Set a flashcard up with just the word presented
+this is a flashcard preflip
+*/
+function setcard(card){
+    let card_bot_mid = document.getElementById("bot-mid");
+    let card_top_mid = document.getElementById("top_mid");
+    let card_bot_right_picture = document.getElementById("bot_right_picture");
+    let card_bot_left = document.getElementById("bot_left");
+    
+
+    card_bot_mid.textContent = card;
+    card_bot_left.textContent = "";
+    card_top_mid.textContent = "";
+    card_bot_right_picture.setAttribute("src","");
 }
 
 
@@ -115,6 +132,12 @@ function getanewcard(lesson, CurrCardIndex){
     return newcard;
 }
 
+
+function startlesson(lessonid){
+    let card = words[lessons[1][1]];
+    
+    setcard(card);
+}
 
 const words = [
     "a","akesi","ala","alasa","ale, ali","anpa",
