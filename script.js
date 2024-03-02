@@ -56,24 +56,25 @@ A function to flip the card when the user clicks on it.
 takes index of the word its currently on as well as words descriptiosn and imgs as int inputs.
 */
 function flipflashcard(word_index){
-    let card_top_mid = document.getElementById("top_mid");
-    let card_bot_right_picture = document.getElementById("bot_right_picture");
-    let card_bot_left = document.getElementById("bot_left");
-    let card_bot_mid = document.getElementById("bot_mid");
+    let word = words[word_index];
+    let top_mid = document.getElementById("top-mid");
+    let bot_mid = document.getElementById("bot-mid");
+    let bot_right_picture = document.getElementById("bot-right-picture");
 
-    card_bot_mid.textContent = "";
-    card_top_mid.textContent = words[word_index];
-    card_bot_left.textContent = descriptions[word_index];
+    top_mid.textContent = word;
+    bot_mid.textContent = "";
 
-    card_bot_right_picture.setAttribute("src", "img/" + imgs[word_index]);
-    card_bot_right_picture.setAttribute("width", "304");
-    card_bot_right_picture.setAttribute("height", "228");
-    card_bot_right_picture.setAttribute("alt", words[i]);
+    bot_right_picture.setAttribute("src", "img/" + imgs[word_index]);
+    bot_right_picture.setAttribute("width", "304");
+    bot_right_picture.setAttribute("height", "228");
+    bot_right_picture.setAttribute("alt", words[word_index]);
 }
 
 
 
 function checkflashcard(){
+    console.log("clicked");
+
     let flashcard = document.getElementById("flashcard");
     let CurrWord = flashcard.getAttribute("data-CurrWord");
     let CurrWordIndex = words.indexOf(CurrWord);
@@ -81,10 +82,13 @@ function checkflashcard(){
 
 
     if(Isflipped == "false"){
+        flashcard.setAttribute("data-IsFlipped","true");
         flipflashcard(CurrWordIndex);
-    }
-    else{
+        
+    } else{
+        flashcard.setAttribute("data-IsFlipped","false");
         nextcard(CurrWordIndex);
+        
     }
 
 }
@@ -95,8 +99,8 @@ given the current card displayed by the flashcard find a new word to display the
 function nextcard(CurrCardIndex){
     let flashcard = document.getElementById("flashcard");
     let CurrLessonIndex =  flashcard.getAttribute("data-CurrLesson")
-    let lesson = lessons[CurrLessonIndex];
-    let newcard = getanewcard(lesson, CurrCardIndex);
+    
+    let newcard = getanewcard(CurrLessonIndex, CurrCardIndex);
     setcard(newcard);
 }
 
@@ -107,9 +111,9 @@ this is a flashcard preflip
 */
 function setcard(card){
     let card_bot_mid = document.getElementById("bot-mid");
-    let card_top_mid = document.getElementById("top_mid");
-    let card_bot_right_picture = document.getElementById("bot_right_picture");
-    let card_bot_left = document.getElementById("bot_left");
+    let card_top_mid = document.getElementById("top-mid");
+    let card_bot_right_picture = document.getElementById("bot-right-picture");
+    let card_bot_left = document.getElementById("bot-left");
     
 
     card_bot_mid.textContent = card;
@@ -124,18 +128,32 @@ set newcard's word to the same as current card
 then loop getting a random card until the new card and the current card are different.
 then return the current card 
 */
-function getanewcard(lesson, CurrCardIndex){ 
-    let newcard = CurrCardIndex;
-    while(newcard == CurrCardIndex){
-        newcard  = lesson[Math.floor(Math.random * lesson.length)];
+/*
+function getanewcard(CurrLessonIndex, CurrCardIndex){ 
+    let newcard = words[CurrCardIndex];
+    while(newcard == words[CurrCardIndex]){
+        let newcardindex = lessons[CurrLessonIndex][Math.floor(Math.random * lessons[CurrLessonIndex].length)];
+        newcard  = words[lessons[CurrLessonIndex][newcardindex]];
     }
+    return newcard;
+}
+*/
+
+
+function getanewcard(CurrLessonIndex, CurrCardIndex){ 
+    let PointInLesson = lessons[CurrLessonIndex].indexOf(CurrCardIndex);
+
+    let newcardindex = lessons[CurrLessonIndex][PointInLesson + 1];
+    
+    let newcard = words[newcardindex];
     return newcard;
 }
 
 
 function startlesson(lessonid){
-    let card = words[lessons[1][1]];
-    
+    let card = words[lessons[lessonid][1]];
+    document.getElementById("flashcard").setAttribute("data-CurrLesson",lessonid);
+
     setcard(card);
 }
 

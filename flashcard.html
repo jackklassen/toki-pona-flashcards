@@ -24,7 +24,7 @@
         somewhere here link to the dictionary.
 
                 <div class="panel panel-default">
-                    <div class="panel-body" id = "flashcard" data-CurrWord="a" data-IsFlipped = "false" data-CurrLesson = "">
+                    <div class="panel-body" id = "flashcard" data-CurrWord="a" data-IsFlipped = "false" data-CurrLesson = "" onclick = "checkflashcard()">
                         <div class = "grid-container">
                             <div class = "row">
                                 <div class = "col-sm-4" id = "top-left">top left</div>
@@ -34,14 +34,17 @@
                             <div class = "row">
                                 <div class = "col-sm-4" id = "bot-left">bot left</div>
                                 <div class = "col-sm-4" id = "bot-mid">bot mid</div>
-                                <div class = "col-sm-4" id = "bot-right"><img id = "bot-right_picture"></div>
+                                <div class = "col-sm-4" id = "bot-right"><img id = "bot-right-picture"></div>
                             </div>
 
                         </div>
 
                     </div>
                   </div>
-       <button id = "1" onclick = "startlesson(1)">lesson 1</button>
+       <button id = "1" onclick = "startlesson(0)">lesson 1</button>
+       <button id = "2" onclick = "startlesson(1)">lesson 2</button>
+       <button id = "3" onclick = "startlesson(2)">lesson 3</button>
+       <button id = "4" onclick = "startlesson(3)">lesson 4</button>
        <p>by <a href="https://github.com/jackklassen" class="link-info">jan sakekasan</a></p>
 </body>
 
