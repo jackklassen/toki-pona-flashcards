@@ -57,12 +57,16 @@ takes index of the word its currently on as well as words descriptiosn and imgs 
 */
 function flipflashcard(word_index){
     let word = words[word_index];
+    let description = descriptions[word_index];
     let top_mid = document.getElementById("top-mid");
     let bot_mid = document.getElementById("bot-mid");
     let bot_right_picture = document.getElementById("bot-right-picture");
+    let bot_left = document.getElementById("bot-left");
 
     top_mid.textContent = word;
     bot_mid.textContent = "";
+
+    bot_left.textContent = description;
 
     bot_right_picture.setAttribute("src", "img/" + imgs[word_index]);
     bot_right_picture.setAttribute("width", "304");
@@ -88,9 +92,7 @@ function checkflashcard(){
     } else{
         flashcard.setAttribute("data-IsFlipped","false");
         nextcard(CurrWordIndex);
-        
     }
-
 }
 /*
 given the current card displayed by the flashcard find a new word to display then call the setcard function to display it.
@@ -114,12 +116,15 @@ function setcard(card){
     let card_top_mid = document.getElementById("top-mid");
     let card_bot_right_picture = document.getElementById("bot-right-picture");
     let card_bot_left = document.getElementById("bot-left");
-    
+    let flashcard = document.getElementById("flashcard");
+
 
     card_bot_mid.textContent = card;
     card_bot_left.textContent = "";
     card_top_mid.textContent = "";
     card_bot_right_picture.setAttribute("src","");
+    flashcard.setAttribute("data-CurrWord",card);
+
 }
 
 
