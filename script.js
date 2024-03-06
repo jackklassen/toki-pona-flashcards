@@ -83,15 +83,18 @@ function checkflashcard(){
     let CurrWord = flashcard.getAttribute("data-CurrWord");
     let CurrWordIndex = words.indexOf(CurrWord);
     let Isflipped = flashcard.getAttribute("data-IsFlipped");
+    let LessonOn = flashcard.getAttribute("data-CurrLesson");
 
 
-    if(Isflipped == "false"){
-        flashcard.setAttribute("data-IsFlipped","true");
-        flipflashcard(CurrWordIndex);
+    if(LessonOn !== ""){
+        if(Isflipped == "false"){
+            flashcard.setAttribute("data-IsFlipped","true");
+            flipflashcard(CurrWordIndex);
         
-    } else{
-        flashcard.setAttribute("data-IsFlipped","false");
-        nextcard(CurrWordIndex);
+        } else{
+            flashcard.setAttribute("data-IsFlipped","false");
+            nextcard(CurrWordIndex);
+        }
     }
 }
 /*
@@ -123,8 +126,7 @@ function setcard(card){
     card_bot_left.textContent = "";
     card_top_mid.textContent = "";
     card_bot_right_picture.setAttribute("src","");
-    flashcard.setAttribute("data-CurrWord",card);
-
+    flashcard.setAttribute("data-CurrWord", card);
 }
 
 
@@ -133,24 +135,19 @@ set newcard's word to the same as current card
 then loop getting a random card until the new card and the current card are different.
 then return the current card 
 */
-/*
 function getanewcard(CurrLessonIndex, CurrCardIndex){ 
-    let newcard = words[CurrCardIndex];
-    while(newcard == words[CurrCardIndex]){
-        let newcardindex = lessons[CurrLessonIndex][Math.floor(Math.random * lessons[CurrLessonIndex].length)];
-        newcard  = words[lessons[CurrLessonIndex][newcardindex]];
-    }
-    return newcard;
-}
-*/
 
-
-function getanewcard(CurrLessonIndex, CurrCardIndex){ 
-    let PointInLesson = lessons[CurrLessonIndex].indexOf(CurrCardIndex);
-
-    let newcardindex = lessons[CurrLessonIndex][PointInLesson + 1];
+    let FilterLesson = lessons[CurrLessonIndex].filter(function(i){return i !== CurrCardIndex});
+    let rand = Math.floor(Math.random() * FilterLesson.length);
     
+    console.log("filterlesson: " + FilterLesson);
+    console.log("rand: "+ rand);
+
+
+    let newcardindex = FilterLesson[rand];
+    console.log("newcard: "+ newcardindex);
     let newcard = words[newcardindex];
+    
     return newcard;
 }
 
@@ -158,7 +155,6 @@ function getanewcard(CurrLessonIndex, CurrCardIndex){
 function startlesson(lessonid){
     let card = words[lessons[lessonid][1]];
     document.getElementById("flashcard").setAttribute("data-CurrLesson",lessonid);
-
     setcard(card);
 }
 
