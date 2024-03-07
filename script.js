@@ -10,8 +10,8 @@ function fillmenu(){
 
     for (; i<len;){
         var x = document.createElement("BUTTON");
-        var t = document.createTextNode(words[i]);
-        console.log(words[i]);
+        var t = document.createTextNode(words[i] + ": " + i);
+        
 
         x.append(t);
         x.id = i;
@@ -196,20 +196,44 @@ const descriptions = [
 "verb: use | preposition: with","noun: fruit, vegetable, mushroom","modifier: also, too, even, indeed (emphasizes the word(s) before it)","noun: part, partition | verb: split, cut, divide",
 "modifier: hard, solid, stone-like, made of stone or metal | noun: hard thing, rock, stone, metal, mineral, clay","noun: semi-solid or squishy substance, e.g. paste, powder, gum",
 "noun: air, wind, smell, soul | modifier: air-like, ethereal, gaseous","noun: colour, paint | modifier: colourful verb: colour, paint","noun: group, community, society, company, people | modifier: communal, shared, public, of the society [group]",
-"verb: listen, hear | modifier: auditory, hearing" /* do the L's next */
+"verb: listen, hear | modifier: auditory, hearing","seperator (between adverb or phrase of context and sentence)", "noun, verb: sleep, rest | modifier: sleeping, of sleep",
+"modifier: blue, blue-green","noun: head, mind | modifier: main, leading, in charge | verb: lead, control, rule, steer","noun: clothing, cloth, fabric",
+"noun: cold | modifier:	cold, uncooked | verb: cool down, chill","seperator (between any subject except mi and sina and its verb; also used to introduce a new verb for the same subject)",
+"modifier: small, little, young, a bit, short, few, less | verb: reduce, shorten, shrink, lessen","noun: long, very thin, floppy thing, e.g. string, rope, hair, thread, cord, chain",
+"noun: flat and bendable thing, e.g. paper, card, ticket","modifier: red","preposition: be (located) in/at/on | verb: be there, be present, be real/true, exist, be awake",
+"noun: hand, arm","verb: see, look at, watch, read | look, watch out, pay attention | modifier: visual(ly) [looking]", "noun: hole, orifice, window, door [sounds like loop]",
+"noun: land, earth, country, (outdoor) area","noun: parent, mother, father | modifier: of the parent, parental, maternal, fatherly[sounds like momma]",
+"noun: money, material wealth, currency, dollar, capital[money]",
+"noun: woman, female, girl, wife, girlfriend | modifier: female, feminine, womanly[Mary]", "noun: I, we | modifier: my, our[me]",
+"noun: man, male, boy, husband, boyfriend | modifier: male, masculine, manly", "noun: food, meal | verb: eat, drink, swallow, ingest, consume",
+"noun:	death | verb: die, be dead | kill | modifier: dead, deadly, fatal","noun: back, rear end, butt, behind | modifier: back, rear",
+"interjective: oof! meow! moo! etc. (animal noise)[moo]","noun:	moon | modifier: lunar [moon]",
+"noun: fun, playing, game, recreation, art, entertainment | modifier: artful, fun, recreational | verb:	play, have fun | amuse, entertain",
+"modifier: many, very, much, several, a lot, abundant, numerous, more | noun: amount, quantity | verb: make many or much [multi]"
+/*continue from the n's*/
 ];
 
-const imgs = [
+const imgs = [ /* this is off by some amount cross check to fix */
 "A_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Akesi_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ala_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
 "Alasa_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ale_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg", "Anpa_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
 "Ante_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Anu_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Awen_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
 "E_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","En_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Epiku_-_sitelen_pona_tan_lipu_pu_pi_toki_Epelanto.png","Esun_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
 "Ijo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ike_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ilo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Insa_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
 "Jaki_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Jan_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Jelo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Jo_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
-"","","","","",""
+"Kala_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Kalama_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Kama_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Kasi_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Ken_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Kepeken_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Kili_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Kin_-_sitelen_pona_tan_lipu_pu_pi_toki_Epelanto.png","Kipisi_-_sitelen_pona_tan_lipu_pu_pi_toki_Epelanto.png","Kiwen_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ko_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Kon_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Kule_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","La_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Lape_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Laso_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Lawa_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Len_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Lete_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Li_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Lili_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Linja_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Lipu_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Loje_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Lon_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Luka_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Lukin_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Lupa_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Ma_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Mama_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg",
+"Mani_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg","Meli_-_sitelen_pona_in_Sonja_Lang's_handwriting.svg"
+
 
 ];
 
 const lessons = [
-[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8]
+[13, 18, 27,45,53,68,102], [110, 113, 42,88,103], [54, 55, 98,33,97,121], [1, 2, 3, 4, 5, 6, 7, 8]
 ];
