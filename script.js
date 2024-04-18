@@ -209,8 +209,19 @@ const descriptions = [
 "noun:	death | verb: die, be dead | kill | modifier: dead, deadly, fatal","noun: back, rear end, butt, behind | modifier: back, rear",
 "interjective: oof! meow! moo! etc. (animal noise)[moo]","noun:	moon | modifier: lunar [moon]",
 "noun: fun, playing, game, recreation, art, entertainment | modifier: artful, fun, recreational | verb:	play, have fun | amuse, entertain",
-"modifier: many, very, much, several, a lot, abundant, numerous, more | noun: amount, quantity | verb: make many or much [multi]"
-/*continue from the n's*/
+"modifier: many, very, much, several, a lot, abundant, numerous, more | noun: amount, quantity | verb: make many or much [multi]",
+"noun: food additive, accessory, something extra | verb: season, embellish, stimulate","noun: number | other: -th (ordinal numbers)[number]", 
+"modifier: silly, crazy, foolish, drunk, strange, stupid, weird | verb: drive crazy, make weird", "noun: way, manner, custom, road, path, doctrine, system, method",
+"noun: bump, nose, hill, mountain, button", "modifier: this, that", "noun: word, name", "noun: leg, foot",
+"seperator: O (vocative or imperative) | interjective: hey! (calling somebody's attention)", "noun: eye [similar to oculist]", "noun: love | modifier: love | verb: to love (a person)",
+"noun: she, he, it, they | modifier: her, his, its, their", "verb: open, turn on", "noun: blunder, accident, mistake, destruction, damage, breaking | verb: screw up, f**k up, botch, ruin, break, hurt, injure, damage, spoil, ruin, screw up, fall apart, break | interjective: damn! f**k!",
+"noun: activity, work, deed, project | modifier: active, work-related, operating, working | verb: do, make, build, create, act, work, function",
+"noun: long, mostly hard object, e.g. rod, stick, branch", "noun: grain, cereal", "verb: give, put, send, place, release, emit, cause | noun: giving, transfer, exchange",
+"seperator: of, belonging to","noun: feelings, emotion, heart | verb: feel, think, sense, touch [feeling]", "modifier: black, dark | noun: darkness, shadows | verb: darken",
+"noun: end, tip | modifier: completed, finished, past, done, ago | verb: finish, close, end, turn off", "noun: bug, insect, spider", "noun: side, hip, next to | preposition: in the accompaniment of, with | modifier: neighbouring",
+"noun: container, box, bowl, cup, glass [box]", "noun: good, simplicity, positivity | modifier: good, simple, positive, nice, correct, right | interjective: great! good! thanks! OK! cool! yay! | verb: improve, fix, repair, make good [bonam]",
+"verb: interact with the official toki pona book" 
+/*continue from the s's*/
 ];
 
 const imgs = [ /* this is off by some amount cross check to fix */
