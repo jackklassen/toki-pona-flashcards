@@ -174,7 +174,7 @@ const words = [
     "pipi","poka","poki","pona","pu","sama","seli","selo","seme",
     "sewi","sijelo","sike","sin","sina","sinpin","sitelen","sona",
     "soweli","suli","suno","supa","suwi","tan","taso","tawa","telo",
-    "tenpo","toki","tomo","tu","unpa","uta","utala","walo",
+    "tenpo","toki","tomo","tonsi","tu","unpa","uta","utala","walo",
     "wan","waso","wawa","weka","wile"
 ];
 
@@ -220,7 +220,21 @@ const descriptions = [
 "seperator: of, belonging to","noun: feelings, emotion, heart | verb: feel, think, sense, touch [feeling]", "modifier: black, dark | noun: darkness, shadows | verb: darken",
 "noun: end, tip | modifier: completed, finished, past, done, ago | verb: finish, close, end, turn off", "noun: bug, insect, spider", "noun: side, hip, next to | preposition: in the accompaniment of, with | modifier: neighbouring",
 "noun: container, box, bowl, cup, glass [box]", "noun: good, simplicity, positivity | modifier: good, simple, positive, nice, correct, right | interjective: great! good! thanks! OK! cool! yay! | verb: improve, fix, repair, make good [bonam]",
-"verb: interact with the official toki pona book" 
+"verb: interact with the official toki pona book", "modifier: same, similar, equal, of equal status or position | preposition: like, as, seem", "noun: fire, warmth, heat | modifier: hot, warm, cooked | verb: heat, warm up, cook","noun: outside, surface, skin, shell, bark, shape, peel",
+"other: what, which, wh- (question word)", "noun: high, up, above, top, over, on | modifier: superior, elevated, religious, formal",
+"noun: body, physical state", "noun: circle, wheel, sphere, ball, cycle | modifier: round, cyclical",
+"modifier: new, fresh, another, more | verb: renew, renovate, freshen", "noun: you | modifier: your",
+"noun: front, chest, torso, face, wall", "noun:	picture, image | verb: draw, write", "noun: knowledge, wisdom, intelligence, understanding | verb: know, understand, know how to | kama: learn, study", 
+"noun: animal, especially land mammal, lovable animal", "modifier: big, tall, long, adult, important | verb: enlarge, lengthen | noun: size",
+"noun: sun, light","noun: horizontal surface, e.g furniture, table, chair, pillow, floor",
+"noun: candy, sweet food | modifier: sweet, cute | verb: sweeten [sweet]",
+"preposition: from, by, because of, since | noun: origin, cause", "modifier: only, sole | conjunction: but [that's all]", "preposition: to, in order to, towards, for, until | verb: go to, walk, travel, move, leave, displace | noun: movement, transportation | modifier: moving, mobile [towards]",
+"noun: water, liquid, juice, sauce | verb: water, wash with water","noun: time, period of time, moment, duration, situation", "noun: language, talking, speech, communication | modifer: talking, verbal | verb: say, talk, chat, communicate | interjective: hello! hi!",
+"noun: indoor constructed space, e.g. house, home, room, building | modifier: urban, domestic, household", 
+"noun: non-binary, transgender, non-conforming", "modifier: two | noun: duo, pair | verb: double, separate/cut/divide in two [two]", "noun:	sex, sexuality | modifier: erotic, sexual | verb: have sex with, sleep with, f**k, have sex",
+"noun: mouth | modifier: oral", "noun: conflict, disharmony, competition, fight, war, battle, attack, blow, argument, physical or verbal violence | verb: hit, strike, attack, compete against",
+"modifier: white, light (colour) | noun: white thing or part, whiteness, lightness [sounds like wall, which is often white]", "modifier: one, a | noun: unit, element, particle, part, piece | verb: unite, make one [one]" ,
+"noun:	bird, winged animal", "noun: energy, strength, power | modifier: energetic, strong, fierce, intense, sure, confident | verb: strengthen, energize, empower","modifier: away, absent, missing | noun: absence | verb: throw away, remove, get rid of" , "verb: to want, need, wish, have to, must, will, should | noun: desire, need, will | modifer: necessary"
 /*continue from the s's*/
 ];
 
